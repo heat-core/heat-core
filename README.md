@@ -1,9 +1,9 @@
 <div align="center">
   <h1>Hi there, I'm Farbod Jolani 👋</h1>
-  <p><strong>Software Engineer specializing in reliable LLM, RAG & Autonomous Agent Architectures</strong></p>
+  <p><strong>Software Engineer | Focused on building & exploring reliable LLM, RAG & Autonomous Agent Systems</strong></p>
 
   <p>
-    <a href="https://linkedin.com/in/farbod-jolani" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+    <a href="https://linkedin.com/in/farbodjolani" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
     <a href="mailto:farbod.jolani00@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
   </p>
 </div>
