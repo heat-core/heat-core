@@ -376,6 +376,18 @@ def build_telemetry_svg(
 '''
 
 
+def build_badge_svg(theme_name: str, label: str, accent: str, icon_path: str, width: int) -> str:
+    """Render a crisp self-hosted action pill SVG so badges never timeout on third-party CDNs."""
+    t = THEMES[theme_name]
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="32" viewBox="0 0 {width} 32" fill="none" role="img" aria-label="{html.escape(label)}">
+  <rect x="0.5" y="0.5" width="{width - 1}" height="31" rx="8" fill="{t["panel"]}" stroke="{t["border"]}" stroke-width="1" />
+  <rect x="6" y="6" width="20" height="20" rx="5" fill="{accent}" />
+  <g transform="translate(8, 8)">{icon_path}</g>
+  <text x="34" y="20" font-family='{SANS}' font-size="12" font-weight="600" fill="{t["text"]}">{html.escape(label)}</text>
+</svg>
+'''
+
+
 def main() -> None:
     token = get_token()
     user = fetch_github_data(token, USERNAME)
@@ -401,10 +413,27 @@ def main() -> None:
 
     langs = aggregate_languages(repos, exclude_name=USERNAME)
 
+    linkedin_icon = '<path fill="#ffffff" d="M3.5 5.2a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6ZM2.4 6.5h2.2V13H2.4V6.5Zm3.6 0h2.1v.9h.03c.29-.55 1.01-1.13 2.08-1.13 2.22 0 2.63 1.46 2.63 3.36V13h-2.2V9.97c0-.72-.01-1.65-1-1.65-1.01 0-1.16.79-1.16 1.6V13H6V6.5Z"/>'
+    email_icon = '<path fill="#ffffff" d="M2 4.5A1.5 1.5 0 0 1 3.5 3h9A1.5 1.5 0 0 1 14 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5v-7Zm1.6.3L8 7.9l4.4-3.1H3.6Zm-.1 1.4v5.3h9V6.2L8.4 9.1a.7.7 0 0 1-.8 0L3.5 6.2Z"/>'
+    repos_icon = '<path fill="#ffffff" d="M5.2 4.2 2.4 8l2.8 3.8 1.2-.9L4.3 8l2.1-2.9-1.2-.9Zm5.6 0-1.2.9L11.7 8l-2.1 2.9 1.2.9L13.6 8l-2.8-3.8Zm-2 0L6.6 11.8l1.4.4 2.2-7.6-1.4-.4Z"/>'
+
     ASSETS_DIR.mkdir(parents=True, exist_ok=True)
     for theme in ("dark", "light"):
+        t = THEMES[theme]
         (ASSETS_DIR / f"hero-{theme}.svg").write_text(
             build_hero_svg(theme, display_name, USERNAME),
+            encoding="utf-8",
+        )
+        (ASSETS_DIR / f"badge-linkedin-{theme}.svg").write_text(
+            build_badge_svg(theme, "LinkedIn · farbodjolani", "#0A66C2", linkedin_icon, 200),
+            encoding="utf-8",
+        )
+        (ASSETS_DIR / f"badge-email-{theme}.svg").write_text(
+            build_badge_svg(theme, "Email · farbod.jolani00", t["accent"], email_icon, 200),
+            encoding="utf-8",
+        )
+        (ASSETS_DIR / f"badge-repos-{theme}.svg").write_text(
+            build_badge_svg(theme, f"{total_public_repos} Public Repositories", t["green"], repos_icon, 190),
             encoding="utf-8",
         )
         (ASSETS_DIR / f"telemetry-{theme}.svg").write_text(
