@@ -379,11 +379,11 @@ def build_telemetry_svg(
 def build_badge_svg(theme_name: str, label: str, accent: str, icon_path: str, width: int) -> str:
     """Render a crisp self-hosted action pill SVG so badges never timeout on third-party CDNs."""
     t = THEMES[theme_name]
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="32" viewBox="0 0 {width} 32" fill="none" role="img" aria-label="{html.escape(label)}">
-  <rect x="0.5" y="0.5" width="{width - 1}" height="31" rx="8" fill="{t["panel"]}" stroke="{t["border"]}" stroke-width="1" />
-  <rect x="6" y="6" width="20" height="20" rx="5" fill="{accent}" />
-  <g transform="translate(8, 8)">{icon_path}</g>
-  <text x="34" y="20" font-family='{SANS}' font-size="12" font-weight="600" fill="{t["text"]}">{html.escape(label)}</text>
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="30" viewBox="0 0 {width} 30" fill="none" role="img" aria-label="{html.escape(label)}">
+  <rect x="0.5" y="0.5" width="{width - 1}" height="29" rx="7" fill="{t["panel"]}" stroke="{t["border"]}" stroke-width="1" />
+  <rect x="5" y="5" width="20" height="20" rx="5" fill="{accent}" />
+  <g transform="translate(7, 7)">{icon_path}</g>
+  <text x="32" y="19" font-family='{SANS}' font-size="11.5" font-weight="600" fill="{t["text"]}">{html.escape(label)}</text>
 </svg>
 '''
 
@@ -425,15 +425,15 @@ def main() -> None:
             encoding="utf-8",
         )
         (ASSETS_DIR / f"badge-linkedin-{theme}.svg").write_text(
-            build_badge_svg(theme, "LinkedIn · farbodjolani", "#0A66C2", linkedin_icon, 200),
+            build_badge_svg(theme, "LinkedIn · farbodjolani", "#0A66C2", linkedin_icon, 180),
             encoding="utf-8",
         )
         (ASSETS_DIR / f"badge-email-{theme}.svg").write_text(
-            build_badge_svg(theme, "Email · farbod.jolani00", t["accent"], email_icon, 200),
+            build_badge_svg(theme, "Email · farbod.jolani00", t["accent"], email_icon, 180),
             encoding="utf-8",
         )
         (ASSETS_DIR / f"badge-repos-{theme}.svg").write_text(
-            build_badge_svg(theme, f"{total_public_repos} Public Repositories", t["green"], repos_icon, 190),
+            build_badge_svg(theme, f"{total_public_repos} Public Repos", t["green"], repos_icon, 146),
             encoding="utf-8",
         )
         (ASSETS_DIR / f"telemetry-{theme}.svg").write_text(

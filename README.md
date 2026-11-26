@@ -15,29 +15,7 @@
   </picture>
 
   <p align="center">
-    <a href="https://www.linkedin.com/in/farbodjolani" target="_blank">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./assets/badge-linkedin-dark.svg" />
-        <source media="(prefers-color-scheme: light)" srcset="./assets/badge-linkedin-light.svg" />
-        <img src="./assets/badge-linkedin-dark.svg" alt="LinkedIn" />
-      </picture>
-    </a>
-    &nbsp;
-    <a href="mailto:farbod.jolani00@gmail.com">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./assets/badge-email-dark.svg" />
-        <source media="(prefers-color-scheme: light)" srcset="./assets/badge-email-light.svg" />
-        <img src="./assets/badge-email-dark.svg" alt="Email" />
-      </picture>
-    </a>
-    &nbsp;
-    <a href="https://github.com/heat-core?tab=repositories">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./assets/badge-repos-dark.svg" />
-        <source media="(prefers-color-scheme: light)" srcset="./assets/badge-repos-light.svg" />
-        <img src="./assets/badge-repos-dark.svg" alt="Public Repositories" />
-      </picture>
-    </a>
+    <a href="https://www.linkedin.com/in/farbodjolani" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/badge-linkedin-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="./assets/badge-linkedin-light.svg" /><img src="./assets/badge-linkedin-dark.svg" alt="LinkedIn" /></picture></a>&nbsp;&nbsp;<a href="mailto:farbod.jolani00@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/badge-email-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="./assets/badge-email-light.svg" /><img src="./assets/badge-email-dark.svg" alt="Email" /></picture></a>&nbsp;&nbsp;<a href="https://github.com/heat-core?tab=repositories"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/badge-repos-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="./assets/badge-repos-light.svg" /><img src="./assets/badge-repos-dark.svg" alt="Public Repositories" /></picture></a>
   </p>
 
 </div>
